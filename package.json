@@ -1,0 +1,40 @@
+{
+  "name": "vue-ssr",
+  "version": "0.0.1",
+  "description": "Vue.js Server Side Render Template with Webpack & Express",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node app",
+    "deploy": "node app --production",
+    "build": "rimraf dist && npm run build:client && npm run build:server",
+    "build:client": "webpack --config build/webpack.client.config.js --progress --hide-modules",
+    "build:server": "webpack --config build/webpack.server.config.js --progress --hide-modules"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ccforward/vue-ssr.git"
+  },
+  "dependencies": {
+    "compression": "^1.6.2",
+    "es6-promise": "^4.0.5",
+    "express": "^4.14.0",
+    "lru-cache": "^4.0.2",
+    "serve-favicon": "^2.3.2",
+    "vue": "^2.1.7",
+    "vue-router": "^2.1.1",
+    "vue-server-renderer": "^2.1.7",
+    "vuex": "^2.1.1",
+    "vuex-router-sync": "^4.0.2"
+  },
+  "keywords": [
+    "Vue",
+    "SSR",
+    "Server Side Render"
+  ],
+  "author": "cc <ccking@foxmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ccforward/vue-ssr/issues"
+  },
+  "homepage": "https://github.com/ccforward/vue-ssr#readme"
+}
