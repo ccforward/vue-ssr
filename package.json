@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "node app",
     "deploy": "node app --production",
-    "build": "rimraf dist && npm run build:client && npm run build:server",
-    "build:client": "webpack --config build/webpack.client.config.js --progress --hide-modules",
-    "build:server": "webpack --config build/webpack.server.config.js --progress --hide-modules"
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "webpack --config build/webpack.client.conf.js --progress --hide-modules",
+    "build:server": "webpack --config build/webpack.server.conf.js --progress --hide-modules"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,28 @@
     "vue-server-renderer": "^2.1.7",
     "vuex": "^2.1.1",
     "vuex-router-sync": "^4.0.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.6.0",
+    "babel": "^6.5.2",
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "css-loader": "^0.26.1",
+    "extract-text-webpack-plugin": "^2.0.0-beta.3",
+    "file-loader": "^0.9.0",
+    "html-webpack-plugin": "^2.24.1",
+    "memory-fs": "^0.4.1",
+    "node-sass": "^4.1.1",
+    "sass-loader": "^4.1.1",
+    "style-loader": "^0.13.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^2.4.0",
+    "url-loader": "^0.5.7",
+    "vue-loader": "^10.0.2",
+    "vue-template-compiler": "^2.1.7",
+    "webpack": "^2.1.0-beta.28",
+    "webpack-dev-middleware": "^1.9.0",
+    "webpack-hot-middleware": "^2.14.0"
   },
   "keywords": [
     "Vue",
