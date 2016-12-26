@@ -19,7 +19,7 @@ const config = {
   output: {
     path: path.resolve(__dirname, '../dist'),
     publicPath: '/dist',
-    filename: '[name][chunkhash:5].js'
+    filename: '[name].[chunkhash:5].js'
   },
   resolve: {
     alias: {
@@ -39,9 +39,11 @@ const config = {
       },
       {
         test: /\.js$/,
-        loader: 'babel-loader',
-        include: projectRoot,
-        exclude: /node_modules/
+        loader: 'buble-loader',
+        exclude: /node_modules/,
+        options: {
+          objectAssign: 'Object.assign'
+        }
       },
       {
         test: /\.css$/,
@@ -73,15 +75,16 @@ if (process.env.NODE_ENV !== 'production') {
   return module.exports = config
 }
 
+
 config.plugins.push(
   new webpack.LoaderOptionsPlugin({
     minimize: true
+  }),
+  new webpack.optimize.UglifyJsPlugin({
+    compress: {
+      warnings: false
+    }
   })
-  // new webpack.optimize.UglifyJsPlugin({
-  //   compress: {
-  //     warnings: false
-  //   }
-  // })
 )
 
 module.exports = config
