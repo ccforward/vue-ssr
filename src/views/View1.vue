@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <main>
     <img src="/public/logo.png">
-    <h2>view1</h2>
-    <a href="/">APP</a>
+    <h3 class="view1-title">This is View1</h3>
+    <a href="/">Main</a>
     <a href="/view1">view1</a>
     <a href="/view2">view2</a>
-  </div>
+  </main>
 </template>
 <script>
   export default {

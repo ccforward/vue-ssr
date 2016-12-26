@@ -13,6 +13,8 @@ module.exports = (app, opt) => {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   )
+
+
   const clientCompiler = webpack(clientConfig)
   const devMiddleware = webpackDevMiddleware(clientCompiler, {
     publicPath: clientConfig.output.publicPath,
@@ -21,13 +23,14 @@ module.exports = (app, opt) => {
       chunks: false
     }
   })
+
   app.use(devMiddleware)
   clientCompiler.plugin('done', () => {
     const fs = devMiddleware.fileSystem
     const filePath = path.join(clientConfig.output.path, 'index.html')
     if (fs.existsSync(filePath)) {
       const index = fs.readFileSync(filePath, 'utf-8')
-      opts.indexUpdated(index)
+      opt.indexUpdated(index)
     }
   })
   app.use(webpackHotMiddleware(clientCompiler))
@@ -41,6 +44,6 @@ module.exports = (app, opt) => {
     stats = stats.toJson()
     stats.errors.forEach(err => console.error(err))
     stats.warnings.forEach(err => console.warn(err))
-    opts.bundleUpdated(mfs.readFileSync(outputPath, 'utf-8'))
+    opt.bundleUpdated(mfs.readFileSync(outputPath, 'utf-8'))
   })
 }

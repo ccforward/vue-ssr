@@ -89,7 +89,7 @@ app.get('*', (req, res) => {
   const renderStream = renderer.renderToStream(context)
 
   renderStream.once('data', () => {
-    res.write(parseMeta(indexHTML.head. context))
+    res.write(parseMeta(indexHTML.head, context))
   })
 
   renderStream.on('data', chunk => {
@@ -105,7 +105,7 @@ app.get('*', (req, res) => {
       )
     }
 
-    res.end(indexHtml.tail)
+    res.end(indexHTML.tail)
   })
 
   renderStream.on('error', err => {

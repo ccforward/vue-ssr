@@ -18,15 +18,8 @@
     <noscript id="deferred-styles"></noscript>
     <!-- APP -->
     <script>
-      var loadDeferredStyles = function() {
-        var e = document.getElementById("deferred-styles"),
-            t = document.head.getElementsByTagName("meta");
-        t[t.length - 1].insertAdjacentHTML("afterend", e.textContent)
-        e.parentElement.removeChild(e) 
-      }
-      var raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
-      raf ? raf(function() { window.setTimeout(loadDeferredStyles, 0) }) : window.addEventListener("load", loadDeferredStyles);
-
+      var loadDeferredStyles = function() { var e = document.getElementById("deferred-styles"),t = document.head.getElementsByTagName("meta");t[t.length - 1].insertAdjacentHTML("afterend", e.textContent);e.parentElement.removeChild(e) }
+      var raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame; raf ? raf(function() { window.setTimeout(loadDeferredStyles, 0) }) : window.addEventListener("load", loadDeferredStyles);
     </script>
     <% if(htmlWebpackPlugin.options.environment === 'production') { %>
     <% for(key in htmlWebpackPlugin.files.js){ %>

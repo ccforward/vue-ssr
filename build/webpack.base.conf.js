@@ -76,12 +76,12 @@ if (process.env.NODE_ENV !== 'production') {
 config.plugins.push(
   new webpack.LoaderOptionsPlugin({
     minimize: true
-  }),
-  new webpack.optimize.UglifyJsPlugin({
-    compress: {
-      warnings: false
-    }
   })
+  // new webpack.optimize.UglifyJsPlugin({
+  //   compress: {
+  //     warnings: false
+  //   }
+  // })
 )
 
 module.exports = config

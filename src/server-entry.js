@@ -40,7 +40,6 @@ export default context => {
     if (page && page.h1) {
       app.title = page.h1
     }
-    console.log(page)
     if (page) {
       context.title = page.title
       context.description = page.description

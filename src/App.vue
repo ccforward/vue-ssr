@@ -1,7 +1,8 @@
 <template>
-  <main>
+  <div class="main-content">
+    <h1>Vue SSR Template</h1>
     <router-view></router-view>
-  </main>
+  </div>
 </template>
 
 <script>
