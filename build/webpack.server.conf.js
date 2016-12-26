@@ -8,7 +8,7 @@ const config = Object.assign({}, base, {
   output: Object.assign({}, base.output, {
     filename: 'server-bundle.js',
     libraryTarget: 'commonjs2'
-  })
+  }),
   externals: Object.keys(require('../package.json').dependencies),
   plugins: (base.plugins || []).concat([
     new webpack.DefinePlugin({

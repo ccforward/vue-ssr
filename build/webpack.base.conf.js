@@ -1,7 +1,7 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const path = require('path')
 const webpack = require('webpack')
-const vueConf = require('./vue-loader-config')
+const vueConf = require('./vue-loader.conf')
 const projectRoot = path.resolve(__dirname, '../');
 
 const config = {
@@ -19,11 +19,9 @@ const config = {
   output: {
     path: path.resolve(__dirname, '../dist'),
     publicPath: '/dist',
-    filename: '[name][chunkhash].js'
+    filename: '[name][chunkhash:5].js'
   },
   resolve: {
-    extensions: ['', '.js', '.vue'],
-    fallback: [path.join(__dirname, './node_modules')],
     alias: {
       'public': path.resolve(__dirname, '../public'),
       'src': path.resolve(__dirname, '../src'),
@@ -31,10 +29,7 @@ const config = {
       'assets': path.resolve(__dirname, '../src/assets')
     }
   },
-  resolveLoader: {
-    fallback: [path.join(__dirname, '../node_modules')]
-  },
-  rules: {
+  module: {
     noParse: /es6-promise\.js$/,
     rules:[
       {
@@ -69,11 +64,8 @@ const config = {
         }
       }
     ]
-  }
-  babel: {
-    presets: ['es2015'],
-    plugins: ['transform-runtime']
-  }
+  },
+  plugins: []
 }
 
 if (process.env.NODE_ENV !== 'production') {

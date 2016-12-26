@@ -15,7 +15,7 @@ const config = Object.assign({}, base, {
       name: 'vendor'
     }),
     new HTMLPlugin({
-      template: 'src/index.template.html',
+      template: 'src/index.html',
       inject: process.env.NODE_ENV !== 'production' ? 'body' : false,
       minify: {
         collapseWhitespace: true

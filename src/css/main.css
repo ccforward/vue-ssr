@@ -1,0 +1,17 @@
+/** CSS Styles */
+
+a {
+  color: inherit;
+}
+
+.list {
+  margin: 0 2rem !important;
+}
+
+main {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
