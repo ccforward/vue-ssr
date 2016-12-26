@@ -8,18 +8,18 @@ const config = {
   devtool: '#source-map',
   entry: {
     app: './src/client-entry.js',
-    vendor: [
-      'es6-promise',
-      'vue',
-      'vue-router',
-      'vuex',
-      'vuex-router-sync'
-    ]
+    // vendor: [
+    //   'es6-promise',
+    //   'vue',
+    //   'vue-router',
+    //   'vuex',
+    //   'vuex-router-sync'
+    // ]
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
     publicPath: '/dist',
-    filename: '[name].[chunkhash:5].js'
+    filename: '[name].[chunkhash:5].js',
   },
   resolve: {
     alias: {

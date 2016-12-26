@@ -25,8 +25,7 @@ const createRenderer =  bundle => {
 }
 
 const parseHTML = tmpl => {
-  const placeholder = '<!-- APP -->'
-
+  const placeholder = '{{ APP }}'
   const i = tmpl.indexOf(placeholder)
   return {
     head: tmpl.slice(0, i),

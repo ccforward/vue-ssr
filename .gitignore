@@ -3,4 +3,3 @@ npm-debug.log
 *.log
 *.DS_Store
 log
-dist/
