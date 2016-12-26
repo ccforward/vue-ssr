@@ -21,7 +21,6 @@
       meta () {
         return {
           title: 'view1 title',
-          h1: 'view1 - view1',
           description: 'this is view1 description',
           keywords: 'view, view1'
         }

@@ -22,7 +22,6 @@
       meta () {
         return {
           title: 'Vue SSR Template',
-          h1: 'Vue.js',
           description: 'this is main description',
           keywords: 'view, main'
         }

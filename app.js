@@ -34,20 +34,12 @@ const parseHTML = tmpl => {
 }
 
 const parseMeta = (head, context) => {
-  const title = context.title || false
-  const description = context.description || false
-  const keywords = context.keywords || false
-
-  if(title) {
-    head = head.replace(/(<title>)(.*?)(<\/title>)/, `$1${title}$3`)
-  }
-  if(description) {
-    head = head.replace(/(<meta name="description" content=")(.*?)(">)/, `$1${description}$3`)
-  }
-  if(keywords) {
-    head = head.replace(/(<meta name="keywords" content=")(.*?)(">)/, `$1${keywords}$3`)
-  }
-
+  const title = context.title || ''
+  const description = context.description || ''
+  const keywords = context.keywords || ''
+  head = head.replace(/(<title>)(.*?)(<\/title>)/, `$1${title}$3`)
+  head = head.replace(/(<meta name=description content=")(.*?)(">)/, `$1${description}$3`)
+  head = head.replace(/(<meta name=keywords content=")(.*?)(">)/, `$1${keywords}$3`)
   return head
 }
 

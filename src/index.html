@@ -5,8 +5,8 @@
     <title>Vue.js SSR Template</title>
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-    <meta name="description" content="<!-- DESCRIPTION -->">
-    <meta name="keywords" content="<!-- KEYWORDS -->">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
     <link rel="icon" href="public/favicon.ico" sizes="16x16">
     <% if(htmlWebpackPlugin.options.environment === 'production') { %>
     <% for(key in htmlWebpackPlugin.files.css){ %>
@@ -15,6 +15,7 @@
     <% } %>
   </head>
   <body>
+    <a class="github-fork-ribbon right-top" href="https://github.com/ccforward/vue-ssr/" title="Fork me on GitHub">Fork me on GitHub</a>
     <noscript id="deferred-styles"></noscript>
     <!-- placeholder -->
     {{ APP }}
