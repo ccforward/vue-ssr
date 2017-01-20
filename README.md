@@ -61,5 +61,5 @@ project /
 ```
 
 ## About Vue.js SSR
-[vue-server-renderer](https:、/github.com/vuejs/vue/tree/dev/packages/vue-server-renderer)
+[vue-server-renderer](https://github.com/vuejs/vue/tree/dev/packages/vue-server-renderer)
 
